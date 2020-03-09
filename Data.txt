@@ -1,1 +1,2 @@
-Total Cases : 114045
+Total Cases : 114078
+Total Deaths : 4004
