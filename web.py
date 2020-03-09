@@ -41,7 +41,7 @@ soup = BeautifulSoup(r.content, 'html5lib')
 quotes=[]
   
 table = soup.findAll('div', attrs = {'class':'maincounter-number'}) 
-print(len(table))
+#print(len(table))
 
 total_cases=(table[0].span.text)
 total_cases=convert_to_number(total_cases)
