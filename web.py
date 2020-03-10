@@ -1,6 +1,7 @@
 import requests 
 from bs4 import BeautifulSoup 
 import csv 
+import time
 def convert_to_number(strr):
     num=''
     for i in range(len(strr)):
@@ -42,7 +43,8 @@ quotes=[]
   
 table = soup.findAll('div', attrs = {'class':'maincounter-number'}) 
 #print(len(table))
-
+print (time.asctime( time.localtime(time.time()) ))
+print()
 total_cases=(table[0].span.text)
 total_cases=convert_to_number(total_cases)
 siz='+'
@@ -64,4 +66,6 @@ f=open('C:\\Users\\eshaa\\Desktop\\CORONA\\Data.txt','w')
 f.write('Total Cases : '+str(total_cases)+'\n')
 f.write('Total Deaths : '+str(total_deaths)+'\n')
 f.write('Recovered : '+str(total_rec)+'\n')
+time1=(time.asctime( time.localtime(time.time()) ))
+f.write(time1)
 f.close()
