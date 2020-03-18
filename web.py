@@ -33,7 +33,7 @@ for i in content[2][11:]:
 old_rec=int(old_rec)
 old_total=int(old_total)
 old_deaths=int(old_deaths)
- 
+old_time =content[3]
 URL = "https://www.worldometers.info/coronavirus/"
 r = requests.get(URL) 
   
@@ -42,8 +42,8 @@ soup = BeautifulSoup(r.content, 'html5lib')
 quotes=[]
   
 table = soup.findAll('div', attrs = {'class':'maincounter-number'}) 
-#print(len(table))
-print (time.asctime( time.localtime(time.time()) ))
+print("TIME")
+print (time.asctime( time.localtime(time.time()) )+'     '+'since '+old_time)
 print()
 total_cases=(table[0].span.text)
 total_cases=convert_to_number(total_cases)
